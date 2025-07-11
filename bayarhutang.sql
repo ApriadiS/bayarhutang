@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2025 at 04:53 AM
+-- Generation Time: Jul 11, 2025 at 05:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,31 +30,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `hutangdata` (
   `id_hutang` int(11) NOT NULL,
   `nama` varchar(512) NOT NULL,
-  `jenis` enum('Hutang','Piutang','','') NOT NULL,
+  `jenis` tinyint(1) NOT NULL,
   `nominal` varchar(512) NOT NULL,
   `timestamp` datetime NOT NULL,
   `jatuh_tempo` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `hutangdata`
---
-ALTER TABLE `hutangdata`
-  ADD PRIMARY KEY (`id_hutang`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `hutangdata`
---
-ALTER TABLE `hutangdata`
-  MODIFY `id_hutang` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

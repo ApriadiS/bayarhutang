@@ -9,7 +9,7 @@ uses
   ZAbstractDataset, ZDataset;
 
 type
-  TF_BarangkuQuickReport = class(TForm)
+  TF_HutangDataQuickReport = class(TForm)
     QuickRep: TQuickRep;
     TitleBand1: TQRBand;
     DetailBand1: TQRBand;
@@ -32,10 +32,8 @@ type
     QRDBText4: TQRDBText;
     ZQuery: TZQuery;
     ZConnection: TZConnection;
-    Shape9: TShape;
     QRLabelJatuhTempo: TQRLabel;
     Shape10: TShape;
-    Shape11: TShape;
     QRDBText5: TQRDBText;
     Shape12: TShape;
   private
@@ -54,13 +52,13 @@ type
   end;
 
 var
-  F_BarangkuQuickReport: TF_BarangkuQuickReport;
+  F_HutangDataQuickReport: TF_HutangDataQuickReport;
 
 implementation
 
 {$R *.dfm}
 
-procedure TF_BarangkuQuickReport.ConnectionSetup;
+procedure TF_HutangDataQuickReport.ConnectionSetup;
 begin
   ZConnection.HostName := 'localhost';
   ZConnection.Database := 'bayarhutang';
@@ -73,7 +71,7 @@ begin
   QuickRep.DataSet := ZQuery;
 end;
 
-procedure TF_BarangkuQuickReport.QuerySetup(ATanggal: TDateTime);
+procedure TF_HutangDataQuickReport.QuerySetup(ATanggal: TDateTime);
 begin
   ZQuery.SQL.Text :=
     'SELECT timestamp, jatuh_tempo, ' +
@@ -84,7 +82,7 @@ begin
   ZQuery.Open;
 end;
 
-procedure TF_BarangkuQuickReport.GenerateReport(ATanggal: TDateTime);
+procedure TF_HutangDataQuickReport.GenerateReport(ATanggal: TDateTime);
 begin
   ConnectionSetup;
   DetailBandSetup;
@@ -99,7 +97,7 @@ begin
   QuickRep.Preview;
 end;
 
-procedure TF_BarangkuQuickReport.DetailBandSetup;
+procedure TF_HutangDataQuickReport.DetailBandSetup;
 begin
   QRDBText1.DataSet := ZQuery;
   QRDBText2.DataSet := ZQuery;
@@ -116,7 +114,7 @@ begin
   QRDBText5.OnPrint := RupiahFormatPrint;
 end;
 
-function TF_BarangkuQuickReport.RupiahFormat(const Value: string): string;
+function TF_HutangDataQuickReport.RupiahFormat(const Value: string): string;
 begin
   // Format as Rupiah, no decimals, no comma, with Rp. prefix
   try
@@ -126,7 +124,7 @@ begin
   end;
 end;
 
-procedure TF_BarangkuQuickReport.RupiahFormatPrint(sender: TObject; var Value: string);
+procedure TF_HutangDataQuickReport.RupiahFormatPrint(sender: TObject; var Value: string);
 begin
   Value := RupiahFormat(Value);
 end;

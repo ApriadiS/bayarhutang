@@ -311,9 +311,9 @@ end;
 
 procedure TF_HutangData.ButtonPreviewClick(Sender: TObject);
 var
-  LFinanceReport: TF_BarangkuQuickReport;
+  LFinanceReport: TF_HutangDataQuickReport;
 begin
-  LFinanceReport := TF_BarangkuQuickReport.Create(Self);
+  LFinanceReport := TF_HutangDataQuickReport.Create(Self);
   try
     LFinanceReport.GenerateReport(DateTimePicker.Date);
   finally

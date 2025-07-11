@@ -1,11 +1,11 @@
-object F_BarangkuQuickReport: TF_BarangkuQuickReport
+object F_HutangDataQuickReport: TF_HutangDataQuickReport
   Left = 0
   Top = 0
   Width = 832
   Height = 1095
   AutoScroll = True
   AutoSize = True
-  Caption = 'BarangKu Quick Report'
+  Caption = 'Bayar Hutang Quick Report'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,18 +15,6 @@ object F_BarangkuQuickReport: TF_BarangkuQuickReport
   Position = poDesigned
   Scaled = False
   TextHeight = 15
-  object Shape9: TShape
-    Left = 104
-    Top = 103
-    Width = 145
-    Height = 56
-  end
-  object Shape11: TShape
-    Left = 432
-    Top = 8
-    Width = 129
-    Height = 41
-  end
   object QuickRep: TQuickRep
     Left = 0
     Top = 0
@@ -375,6 +363,7 @@ object F_BarangkuQuickReport: TF_BarangkuQuickReport
         AlignToBand = False
         AutoSize = False
         Color = clWhite
+        DataField = 'QRDBText1'
         Transparent = False
         ExportAs = exptText
         WrapStyle = BreakOnSpaces
@@ -400,6 +389,7 @@ object F_BarangkuQuickReport: TF_BarangkuQuickReport
         AlignToBand = False
         AutoSize = False
         Color = clWhite
+        DataField = 'QRDBText2'
         Transparent = False
         ExportAs = exptText
         WrapStyle = BreakOnSpaces
@@ -425,6 +415,7 @@ object F_BarangkuQuickReport: TF_BarangkuQuickReport
         AlignToBand = False
         AutoSize = False
         Color = clWhite
+        DataField = 'QRDBText3'
         Transparent = False
         ExportAs = exptText
         WrapStyle = BreakOnSpaces
@@ -450,6 +441,7 @@ object F_BarangkuQuickReport: TF_BarangkuQuickReport
         AlignToBand = False
         AutoSize = False
         Color = clWhite
+        DataField = 'QRDBText4'
         Transparent = False
         ExportAs = exptText
         WrapStyle = BreakOnSpaces
@@ -475,6 +467,7 @@ object F_BarangkuQuickReport: TF_BarangkuQuickReport
         AlignToBand = False
         AutoSize = False
         Color = clWhite
+        DataField = 'QRDBText5'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13

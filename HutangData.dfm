@@ -1,7 +1,7 @@
 object F_HutangData: TF_HutangData
   Left = 0
   Top = 0
-  Caption = 'BarangKu'
+  Caption = 'Bayar Hutang'
   ClientHeight = 541
   ClientWidth = 884
   Color = clBtnFace
